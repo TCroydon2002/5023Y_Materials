@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Week One</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Philip Leftwich" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="custom.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Week One
+## Introduction to Data Science
+### Philip Leftwich
+### 27.9.2021
+
+---
+
+
+
+
+
+
+
+# COVID-safety
+
+* Information [UEA COVID-19 Advice](https://www.uea.ac.uk/about/news/statements/covid-19-advice)
+
+* Take Lateral flow tests on **Mondays** &amp; **Thursdays**
+
+* Self-isolate and get a **PCR** test if unwell or any symptoms
+
+* Wear **Face-coverings** indoors
+
+
+---
+
+# Hello! 👋
+
+.pull-left[
+## Welcome to Data Science
+
+- How are you doing today?
+
+- What made you sign up for this module?
+
+- Go to Slido.com `#602443`
+
+]
+.pull-right[
+## Attendance
+
+&lt;img src="images/qr.png" width="60%" /&gt;
+
+]
+
+---
+
+# Timetables
+
+* Check *Timetabler* regularly for updates/changes
+
+* One lecture per week - In-person/Collaborate
+
+* One workshop per week
+    * Can bring own laptop
+    * Streamed but not recorded
+
+---
+
+# Blackboard
+
+* Announcements
+
+* Yammer Feed
+
+* Lecture Slides
+
+* Module Information
+
+* Collaborate Link
+
+* Assessment Briefs
+
+---
+
+# Assessment
+
+All coursework, no exam
+
+* 40% Summative this term
+
+* 60% Summative next term
+
+---
+
+class: center
+
+# What is Data Science? 
+
+&lt;img src="images/Data_Science_VD.png" title="Venn diagram of subject expertise, programming, maths &amp;amp; statistics" alt="Venn diagram of subject expertise, programming, maths &amp;amp; statistics" width="60%" /&gt;
+
+---
+
+# Insights from Data
+
+* Clear, deep understanding of a complicated problem or situation
+
+--
+
+* Become better scientists
+
+--
+
+* Gain programming and analysis skills that are in demand by business
+
+---
+class: center
+
+# Data is big business
+
+&lt;img src="images/Business.png" title="Venn diagram of subject expertise, programming, maths &amp;amp; statistics" alt="Venn diagram of subject expertise, programming, maths &amp;amp; statistics" width="60%" /&gt;
+
+---
+
+
+# Data is big business
+
+* Fitbit
+
+* Amazon
+
+* Aviva
+
+* Open Health Foundation
+
+* Local/National COVID strategies
+
+---
+
+
+# What can Data do?
+
+* Increase Revenues
+
+* Open new markets
+
+* Improve efficiencies
+
+* Provide insights
+
+* Make predictions
+
+---
+
+
+
+# Become a better scientist
+
+* A better platfom to generate and test hypotheses
+
+* Produce better data visuals
+
+* Gain the statistical tools to describe and predict from data
+
+* Understand the importance of "open" and "reproducible" research
+
+---
+
+
+# Our process
+
+&lt;img src="images/tidy.png" title="Venn diagram of subject expertise, programming, maths &amp;amp; statistics" alt="Venn diagram of subject expertise, programming, maths &amp;amp; statistics" width="2529" /&gt;
+
+* We will use the programming language R - it is fun, flexible and will empower you to be a better Scientist.
+
+
+---
+
+# Questions
+
+The starting point of gaining insights should always be the Question, not the Data
+
+* Is there a pattern/relationship that matches our expectations?
+
+* Can we ascribe causation?
+
+* Can we make predictions?
+
+---
+
+
+class: center, middle, inverse
+
+# Hypothesis
+
+# Turn a question into a hypothesis
+
+---
+
+# Where does data come from?
+
+* Controlled experiments
+
+* 'Field' experiments
+
+* Exploratory studies
+
+---
+
+# Data
+
+What is data?
+
+* Data are records/observations/measurements
+
+--
+
+* Data can be quantitative
+    * Values
+    * Continuous
+    * Integer
+    * Categorical
+--
+
+* Data can be qualitative
+    * Opinion polls
+    * Text mining
+    * Colours
+    
+---
+# Insights from Data
+
+* A dataset is a collection of data
+
+* There are many ways to arrange datasets
+
+* We aim to cut through the variation/noise to identify patterns
+---
+
+# Key features of datasets
+
+* Observations
+
+* Variables
+    * Response
+    * Predictor
+
+* Correlations among variables/ Confounding effects
+
+* Independence of observations
+
+---
+
+# Example of Insights
+
+This is from the palmer penguins dataset curated by Dr. Allison Horst. Data were originally collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER.
+
+**Question** What is the relationship between bill length and bill depth
+
+.left-code[
+
+```r
+head(penguins)
+```
+
+&lt;img src="images/penguin_bill.png" width="80%" /&gt;
+
+]
+
+.right-plot[
+
+```
+## # A tibble: 6 x 8
+##   species island bill_length_mm bill_depth_mm flipper_length_~ body_mass_g sex  
+##   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+## 1 Adelie  Torge~           39.1          18.7              181        3750 male 
+## 2 Adelie  Torge~           39.5          17.4              186        3800 fema~
+## 3 Adelie  Torge~           40.3          18                195        3250 fema~
+## 4 Adelie  Torge~           NA            NA                 NA          NA &lt;NA&gt; 
+## 5 Adelie  Torge~           36.7          19.3              193        3450 fema~
+## 6 Adelie  Torge~           39.3          20.6              190        3650 male 
+## # ... with 1 more variable: year &lt;int&gt;
+```
+]
+
+---
+
+# Example of Insights
+
+.left-code[
+
+
+```r
+ggplot(data = penguins,
+      aes(x = bill_length_mm,
+          y = bill_depth_mm)) +
+  geom_point(
+             size = 3,
+             alpha = 0.5) +
+  geom_smooth(method = "lm", se = TRUE)
+```
+]
+
+.right-plot[
+&lt;img src="binder_reproducible_environments_files/figure-html/unnamed-chunk-9-1.png" width="100%" /&gt;
+]
+
+---
+
+# Example of Insights
+
+
+
+
+.left-code[
+
+
+```r
+ggplot(data = penguins,
+                         aes(x = bill_length_mm,
+                             y = bill_depth_mm,
+                             group = species)) +
+  geom_point(aes(color = species,
+                 shape = species),
+             size = 3,
+             alpha = 0.5) +
+  geom_smooth(method = "lm", se = TRUE, aes(color = species, fill=species), show_guide=FALSE) +
+  scale_color_manual(values = colors) +
+  scale_fill_manual(values = colors)+
+  labs(title = "Penguin bill dimensions",
+       subtitle = "Bill length and depth for Adelie, Chinstrap and Gentoo Penguins at Palmer Station LTER",
+       x = "Bill length (mm)",
+       y = "Bill depth (mm)",
+       color = "Penguin species",
+       shape = "Penguin species") +
+  theme_custom()
+```
+
+]
+
+.right-plot[
+&lt;img src="binder_reproducible_environments_files/figure-html/unnamed-chunk-12-1.png" width="100%" /&gt;
+]
+
+
+---
+
+
+# Workshop
+
+* Getting to know R
+
+* Weekly workshops are your **best** way to learn
+
+* Short quizzes to test your understanding
+
+---
+
+class: center, middle, inverse
+
+# Next Time
+
+# A Data Insights walkthrough
+
+
+
+---
+class: center, middle
+
+
+# ♻
+# Thank you!
+# Questions?
+
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
