@@ -90,18 +90,25 @@ knitr::include_graphics("images/qr.png")
 ---
 
 # Blackboard
-
+.pull-left[
 * Announcements
 
 * Yammer Feed
 
-* Lecture Slides
-
 * Module Information
+
+* Lecture Slides
 
 * Collaborate Link
 
 * Assessment Briefs
+]
+
+.pull-right[
+```{r, echo=FALSE}
+knitr::include_graphics("images/Blackboard.png")
+```
+]
 
 ---
 
