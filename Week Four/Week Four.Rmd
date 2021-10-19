@@ -1,6 +1,6 @@
 ---
 title: "Week Four"
-subtitle: "An Introduction to Data Ethics"  
+subtitle: "An Introduction to Data Ethics SLIDO 422834"  
 author: 
   - "Philip Leftwich"
 date: '18.10.2021'
