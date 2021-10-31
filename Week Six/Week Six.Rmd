@@ -3,7 +3,7 @@ title: "Week Six"
 subtitle: "Data Visualisation - Part 1"  
 author: 
   - "Philip Leftwich"
-date: '25.10.2021'
+date: '1.11.2021'
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -32,7 +32,7 @@ primary_color = "#035AA6",
 code_highlight_color = "rgba(255,255,0,0.5)",
   code_font_url = "https://fontlibrary.org/face/glacial-indifference",
   text_font_family = "GlacialIndifferenceRegular",
-  text_font_size = "25px",
+  text_font_size = "22px",
   text_font_url = "https://fontlibrary.org/face/glacial-indifference",
   header_font_family = "Sifonn",
   header_font_url = "https://fonts.cdnfonts.com/css/sifonn",
@@ -55,7 +55,7 @@ code_highlight_color = "rgba(255,255,0,0.5)",
 
 
 ```{r, echo=FALSE, out.width="60%"}
-#knitr::include_graphics("images/qr.png")
+knitr::include_graphics("images/qr.png")
 ```
 
 ]
@@ -112,9 +112,9 @@ penguins %>%
 
 ---
 
-# The most important elements in graphics
+# Important elements in graphics
 
-```{r, echo=FALSE, out.width="70%"}
+```{r, echo=FALSE, out.width="60%"}
 knitr::include_graphics("images/recall.png")
 ```
 
@@ -259,7 +259,7 @@ knitr::include_graphics("images/graph_crime.png")
 
 ---
 
-# Graph Crimes
+# Graph Crimes `944385`
 
 ```{r, echo=FALSE, out.width="60%"}
 knitr::include_graphics("images/bad_icon.png")
@@ -267,7 +267,7 @@ knitr::include_graphics("images/bad_icon.png")
 
 ---
 
-# Graph Crimes
+# Graph Crimes `944385`
 
 ```{r, echo=FALSE, out.width="80%"}
 knitr::include_graphics("images/bad_bar2.png")
@@ -276,7 +276,7 @@ knitr::include_graphics("images/bad_bar2.png")
 
 ---
 
-# Graph Crimes
+# Graph Crimes `944385`
 
 ```{r, echo=FALSE}
 knitr::include_graphics("images/bad_bar.png")
@@ -284,7 +284,7 @@ knitr::include_graphics("images/bad_bar.png")
 
 ---
 
-# Graph Crimes
+# Graph Crimes `944385`
 
 ```{r, echo=FALSE}
 knitr::include_graphics("images/bad_scatter.png")
@@ -293,7 +293,7 @@ knitr::include_graphics("images/bad_scatter.png")
 
 ---
 
-# Graph Crimes
+# Graph Crimes `944385`
 
 ```{r, echo=FALSE,  out.width="80%"}
 knitr::include_graphics("images/bad_pie.png")
@@ -302,7 +302,7 @@ knitr::include_graphics("images/bad_pie.png")
 
 ---
 
-# Graph Crimes
+# Graph Crimes `944385`
 
 ```{r, echo=FALSE,  out.width="45%"}
 knitr::include_graphics("images/bad_line.png")
@@ -310,7 +310,7 @@ knitr::include_graphics("images/bad_line.png")
 
 ---
 
-# Graph Crimes
+# Graph Crimes `944385`
 
 ```{r, echo=FALSE,  out.width="50%", align="center"}
 knitr::include_graphics("images/bad_line2.png")
@@ -318,7 +318,7 @@ knitr::include_graphics("images/bad_line2.png")
 
 ---
 
-# Graph Crimes
+# Graph Crimes `944385`
 
 ```{r, echo=FALSE,  out.width="80%"}
 knitr::include_graphics("images/COVID-Testing.png")
