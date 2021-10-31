@@ -1,0 +1,393 @@
+---
+title: "Week Six"
+subtitle: "Data Visualisation - Part 1"  
+author: 
+  - "Philip Leftwich"
+date: '25.10.2021'
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["xaringan-themer.css", "custom.css"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE, echo = FALSE)
+library(tidyverse)
+library(palmerpenguins)
+library(cowplot)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+primary_color = "#035AA6",
+  secondary_color = "#97aaba",
+  inverse_header_color = "#FFFFFF", 
+ link_color = "rgb(249, 38, 114)",
+      code_font_family = "GlacialIndifferenceRegular",
+code_highlight_color = "rgba(255,255,0,0.5)",
+  code_font_url = "https://fontlibrary.org/face/glacial-indifference",
+  text_font_family = "GlacialIndifferenceRegular",
+  text_font_size = "25px",
+  text_font_url = "https://fontlibrary.org/face/glacial-indifference",
+  header_font_family = "Sifonn",
+  header_font_url = "https://fonts.cdnfonts.com/css/sifonn",
+)
+
+```
+
+
+# Hello! 👋
+
+.pull-left[
+
+
+- Let me know how you are today in the Q&A on today's Slido!
+
+- Go to Slido.com `#944385`
+
+]
+.pull-right[
+
+
+```{r, echo=FALSE, out.width="60%"}
+#knitr::include_graphics("images/qr.png")
+```
+
+]
+
+---
+
+# Good data visualisations
+
+
+
+.left-code[
+```{r eval=FALSE}
+penguins %>%
+    remove_missing() %>%
+    ggplot(aes(x = bill_length_mm, y = flipper_length_mm,
+              color = species, shape = species)) +
+    geom_point(alpha = 0.7) +
+    labs(x = "Bill length (mm)", 
+         y = "Flipper length (mm)",
+        title = "Scatterplot", 
+        subtitle = "Penguins bill v. flipper length by species",
+        caption = "Source: https://github.com/allisonhorst/palmerpenguins")
+```
+
+Slido.com `#944385`
+]
+
+.right-plot[
+```{r echo=FALSE, warning=FALSE, message=FALSE, out.width="100%"}
+penguins %>%
+    ggplot(aes(x = bill_length_mm, y = flipper_length_mm,
+              color = species, shape = species)) +
+    geom_point(alpha = 0.7) +
+    scale_colour_manual(values=c("#999999", "#E69F00", "#56B4E9"))+
+    labs(x = "Bill length (mm)", 
+         y = "Flipper length (mm)",
+        title = "Scatterplot", 
+        subtitle = "Penguins bill v. flipper length by species",
+        caption = "Source: https://github.com/allisonhorst/palmerpenguins")+
+  theme_minimal(base_size=18)
+  
+```
+]
+
+---
+
+# Requirements of a good graph
+
+* Visualisations must accurately reflect the data
+
+* Tell a story
+
+* Look professional
+
+---
+
+# The most important elements in graphics
+
+```{r, echo=FALSE, out.width="70%"}
+knitr::include_graphics("images/recall.png")
+```
+
+---
+
+# The Good, the Bad & the Ugly
+
+```{r, echo=FALSE, out.width="70%"}
+knitr::include_graphics("images/ugly bad wrong.png")
+```
+
+
+---
+# Choosing the right visual for your data
+
+```{r, echo=FALSE, out.width="85%"}
+knitr::include_graphics("images/bar_psa.png")
+```
+
+---
+# Choosing the right visual for your data
+
+```{r, echo=FALSE, out.width="90%"}
+knitr::include_graphics("images/histo_psa.png")
+```
+
+---
+# Choosing the right visual for your data
+
+```{r, echo=FALSE, out.width="85%"}
+knitr::include_graphics("images/box_psa.png")
+```
+
+---
+
+# Choosing a data visual
+
+* Choosing the right data visual *requires* understanding your data
+
+* You **must** clearly explain any non-obvious features
+
+* We will cover the different types of figures over the next few weeks
+
+---
+
+class: center, middle, inverse
+
+📊 
+# Five common ways graphs can mislead you 
+📊
+
+
+---
+
+class: center
+
+```{r, echo=FALSE, out.width="90%"}
+knitr::include_graphics("images/no_baseline.png")
+```
+
+---
+
+class: center
+
+```{r, echo=FALSE, out.width="90%"}
+knitr::include_graphics("images/manipulating_y.png")
+```
+
+---
+
+class: center
+
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("images/cherry_picking.png")
+```
+
+---
+
+class: center
+
+```{r, echo=FALSE, out.width="90%"}
+knitr::include_graphics("images/wrong_graph.png")
+```
+
+---
+
+class: center
+
+```{r, echo=FALSE, out.width="90%"}
+knitr::include_graphics("images/convention.png")
+```
+
+
+
+---
+
+# BONUS: Spurious correlation
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/correlation_xkcd.png")
+```
+---
+
+# BONUS: Spurious correlation
+
+```{r, echo=FALSE, out.width="105%"}
+knitr::include_graphics("images/bad_correlation.png")
+```
+
+.footnote[http://tylervigen.com/spurious-correlations]
+
+
+---
+
+# BONUS: Should have been a log scale?
+
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("images/linear_covid.png")
+```
+
+
+---
+
+# BONUS: Should have been a log scale?
+
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("images/log_covid.png")
+```
+
+.footnote[Caveat - does everyone undestand logs? More on this in future sessions]
+
+---
+
+
+class: center, middle, inverse
+
+# Graph Crimes
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/graph_crime.png")
+```
+
+---
+
+# Graph Crimes
+
+```{r, echo=FALSE, out.width="60%"}
+knitr::include_graphics("images/bad_icon.png")
+```
+
+---
+
+# Graph Crimes
+
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("images/bad_bar2.png")
+```
+
+
+---
+
+# Graph Crimes
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/bad_bar.png")
+```
+
+---
+
+# Graph Crimes
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/bad_scatter.png")
+```
+
+
+---
+
+# Graph Crimes
+
+```{r, echo=FALSE,  out.width="80%"}
+knitr::include_graphics("images/bad_pie.png")
+```
+
+
+---
+
+# Graph Crimes
+
+```{r, echo=FALSE,  out.width="45%"}
+knitr::include_graphics("images/bad_line.png")
+```
+
+---
+
+# Graph Crimes
+
+```{r, echo=FALSE,  out.width="50%", align="center"}
+knitr::include_graphics("images/bad_line2.png")
+```
+
+---
+
+# Graph Crimes
+
+```{r, echo=FALSE,  out.width="80%"}
+knitr::include_graphics("images/COVID-Testing.png")
+```
+
+---
+
+class: center, middle, inverse
+
+# Lib Dem party *dislikes* accurate graphs
+
+---
+
+class: center
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/cant_win_here.png")
+```
+
+---
+
+class: center
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/beat-mogg.png")
+```
+
+
+---
+
+class: center, middle, inverse
+
+# Government Daily Briefings 2020
+
+ 
+
+---
+
+# Daily Briefings via the BBC
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/Untitled.png")
+```
+
+---
+
+# Daily Briefings via the BBC
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/hospitalacutebed predictions.png")
+```
+
+---
+
+
+class: center, middle
+
+
+# ♻
+
+# Essential Reading:
+
+ [Fundamentals of Data Visualisation](https://clauswilke.com/dataviz/) - Claus O. Wilke
+
+ [R Graphics Cookbook](https://r-graphics.org/index.html) - Winston Chang
+
+ [A ggplot tutorial for beautiful plotting in R](https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/) - Cédric Scherer
+
+
+
+
+
